@@ -26,8 +26,8 @@ Move the cursor to the line that has the promp and type `:ChatGPT`.  This will s
 Type in `:ChatGPT` followed by your prompt.  For example: `:ChatGPT Show me the code for splitting a string into an array in lua`.  Again, this will output the answer on the next line in the current buffer.
 
 ## TODO:
-[] Allow the user to see all the responses from the request (currently only the first is shown) 
-[] Figure out whether prompt should go inside comments or outside of comments
-[] Add proper tests
+* Allow the user to see all the responses from the request (currently only the first is shown) 
+* Figure out whether prompt should go inside comments or outside of comments
+* Add proper tests
 
 
