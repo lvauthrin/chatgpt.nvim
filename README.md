@@ -10,11 +10,17 @@ To make requests via the ChatGPT API, you'll need to get an API KEY and export i
 export OPENAI_API_KEY = <YOUR API KEY HERE>
 ```
 
-Then configure the plugin using the following lua code:
+Then use a plugin manager (e.g like lazy.nvim) to install the plugin:
 ```lua
-require('chatgpt').setup({
-    api_key = os.getenv("OPENAI_API_KEY")
-})
+return {
+  {
+    "lvauthrin/chatgpt.nvim",
+    lazy = false,
+    config = function(_, _)
+      require("chatgpt").setup({ api_key = os.getenv("OPENAI_API_KEY") })
+    end,
+  },
+}
 ```
 
 ### Make a request based on the current line
