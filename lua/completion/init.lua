@@ -1,8 +1,15 @@
 local M = {}
 M.config = {}
 
+<<<<<<< Updated upstream:lua/chatgpt.lua
 function M.send_request(prompt)
 	local json = vim.fn.json_encode({
+=======
+local curl = require("curl")
+
+function M.send_request(prompt)
+	local body = {
+>>>>>>> Stashed changes:lua/completion/init.lua
 		model = "gpt-3.5-turbo",
 		messages = {
 			{
@@ -10,10 +17,21 @@ function M.send_request(prompt)
 				content = prompt,
 			},
 		},
-	})
+	}
 
+<<<<<<< Updated upstream:lua/chatgpt.lua
 	-- TODO: This won't work for nested quotes in the json (escaped quotes)
 	-- local escaped_json = string.gsub(json, '"', '\\"')
+=======
+	local response = curl.get_json("https://api.openai.com/v1/chat/completions", {
+		Authorization = "Bearer " .. M.config.api_key,
+		["Content-Type"] = "application/json",
+	}, body)
+
+	if response == nil then
+		vim.notify("Could not parse response from ChatGPT: " .. response)
+	end
+>>>>>>> Stashed changes:lua/completion/init.lua
 
 	local curl_cmd = {
 		"curl",
@@ -51,7 +69,11 @@ function M.send_request(prompt)
 	vim.notify("Received " .. #parsed_response.choices .. " response")
 
 	-- TODO: Remove this or move to debug
+<<<<<<< Updated upstream:lua/chatgpt.lua
 	print(parsed_response.choices)
+=======
+	--print(vim.inspect(response.choices))
+>>>>>>> Stashed changes:lua/completion/init.lua
 
 	if parsed_response.choices[1].message == nil or parsed_response.choices[1].message.content == nil then
 		vim.notify("No content in response: " .. vim.inspect(parsed_response.choices))
@@ -80,14 +102,22 @@ end
 
 function M.setup(config)
 	-- TODO: Make this debug
-	vim.notify("Loading ChatGPT Plugin...", vim.log.levels.INFO)
+	print("Loading ChatGPT Plugin...")
 
 	assert(config, "config is required")
 	assert(config.api_key and type(config.api_key) == "string", "Config must have an `api_key` property.")
 
 	M.config.api_key = config.api_key
 
+<<<<<<< Updated upstream:lua/chatgpt.lua
 	vim.cmd([[command! -nargs=? ChatGPT lua require('chatgpt').complete('<args>')]])
+=======
+	vim.api.nvim_create_user_command("ChatGPT", function(opts)
+		require("completion").complete(opts.args)
+	end, {
+		nargs = "?",
+	})
+>>>>>>> Stashed changes:lua/completion/init.lua
 end
 
 return M
