@@ -1,6 +1,6 @@
 # chat-gpt.nvim
 
-This repo contains a nvim lua plugin to make requests to ChatGPT and output the answer inside the buffer.
+This repo contains a Neovim Lua plugin to make requests to ChatGPT and output the answer inside the buffer.  Although this plugin works, it's a WIP which I'm using as a learning playground for Neovim/Lua.  For a more robust plugin, see [jackMort/ChatGPT.nvim](https://github.com/jackMort/ChatGPT.nvim).
 
 ## Usage
 
