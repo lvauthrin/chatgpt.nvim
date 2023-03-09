@@ -5,9 +5,8 @@ local mock = require("luassert.mock")
 --local stub = require("luassert.stub")
 
 t.describe("completion module", function()
-	local completion = require("completion")
+	local completion = require("chatgpt.completion")
 	local curl = require("curl")
-	completion.setup({ api_key = os.getenv("OPENAI_API_KEY") })
 
 	t.it("send valid requests", function()
 		local curlMock = mock(curl, true)
