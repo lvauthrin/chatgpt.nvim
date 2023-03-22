@@ -1,4 +1,4 @@
-# chat-gpt.nvim
+# chat-gpt.nvim [![main branch](https://github.com/lvauthrin/chatgpt.nvim/actions/workflows/default.yml/badge.svg)](https://github.com/lvauthrin/chatgpt.nvim/actions/workflows/default.yml)
 
 This repo contains a Neovim Lua plugin to make requests to ChatGPT and output the answer inside the buffer.  Although this plugin works, it's a WIP which I'm using as a learning playground for Neovim/Lua.  For a more robust plugin, see [jackMort/ChatGPT.nvim](https://github.com/jackMort/ChatGPT.nvim).
 
