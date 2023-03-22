@@ -34,6 +34,7 @@ Type in `:ChatGPT` followed by your prompt.  For example: `:ChatGPT Show me the 
 ## TODO:
 * Allow the user to see all the responses from the request (currently only the first is shown) 
 * Figure out whether prompt should go inside comments or outside of comments
-* Add proper tests
+* Use markers to mark the prompt response location
+* Fix test for adding the main command
 
 
