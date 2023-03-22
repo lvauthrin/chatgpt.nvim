@@ -8,7 +8,9 @@ t.describe("Curl module", function()
 			["Content-Type"] = "application/json",
 		})
 
+		-- Blank out values that can vary based on time/tools
 		response.headers["x-amzn-trace-id"] = ""
+		response.headers["user-agent"] = "curl"
 
 		assert.same(response, {
 			args = {
@@ -18,7 +20,7 @@ t.describe("Curl module", function()
 				accept = "*/*",
 				["content-type"] = "application/json",
 				host = "www.postman-echo.com",
-				["user-agent"] = "curl/7.85.0",
+				["user-agent"] = "curl",
 				["x-amzn-trace-id"] = "",
 				["x-forwarded-port"] = "443",
 				["x-forwarded-proto"] = "https",
