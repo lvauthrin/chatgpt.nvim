@@ -11,10 +11,4 @@ function M.setup(cfg)
 	config.api_key = cfg.api_key
 end
 
-vim.api.nvim_create_user_command("ChatGPT", function(opts)
-	require("chatgpt.completion").complete(opts.args)
-end, {
-	nargs = "*",
-})
-
 return M

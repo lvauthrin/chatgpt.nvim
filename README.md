@@ -28,7 +28,7 @@ return {
 Move the cursor to the line that has the promp and type `:ChatGPT`.  This will send the prompt to ChatGPT and output the answer on the next line in the current buffer.  
 **Note:** The call is synchronous and blocks everything until it's done.
 
-### Make a request based on the current line
+### Make a request by passing in an argument
 Type in `:ChatGPT` followed by your prompt.  For example: `:ChatGPT Show me the code for splitting a string into an array in lua`.  Again, this will output the answer on the next line in the current buffer.
 
 ## TODO:

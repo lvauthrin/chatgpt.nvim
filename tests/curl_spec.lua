@@ -1,4 +1,4 @@
-package.path = package.path .. ";lua/?/init.lua"
+--package.path = package.path .. ";lua/?/init.lua"
 
 local t = require("plenary.busted")
 
